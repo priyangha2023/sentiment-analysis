@@ -4,7 +4,9 @@ import re
 import string
 
 # Load models and vectorizer
-vectorizer = joblib.load("model/vectorizer.pkl")
+import os
+vectorizer_path = os.path.join(os.path.dirname(__file__), "model/vectorizer.pkl")
+vectorizer = joblib.load(vectorizer_path)
 nb_model = joblib.load("model/nb_model.pkl")
 svm_model = joblib.load("model/svm_model.pkl")
 rf_model = joblib.load("model/rf_model.pkl")
